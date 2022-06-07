@@ -105,6 +105,40 @@
           }
         }
       }
+    },
+    "@madestoel/ng-translations": {
+      "projectType": "library",
+      "root": "projects/madestoel/ng-translations",
+      "sourceRoot": "projects/madestoel/ng-translations/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/madestoel/ng-translations/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/madestoel/ng-translations/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/madestoel/ng-translations/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/madestoel/ng-translations/src/test.ts",
+            "tsConfig": "projects/madestoel/ng-translations/tsconfig.spec.json",
+            "karmaConfig": "projects/madestoel/ng-translations/karma.conf.js"
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": "68b047d0-a8a0-4d7b-bf79-5720a40b3d14"
   }
 }
